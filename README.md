@@ -64,8 +64,8 @@ public class Example {
 
 Output:
 ```console
-23.03.2019 - 02.22.22 | INFO > Drainyyy is still writing the README
-23.03.2019 - 02.22.47 | NOTIF > Drainyyy is still writing the README
+23.03.2019 - 02:22:22 | INFO > Drainyyy is still writing the README
+23.03.2019 - 02:22:47 | NOTIF > Drainyyy is still writing the README
 ```
 
 With colors it's nearly the same, except that if you want you can choose the colors for the different log types.
