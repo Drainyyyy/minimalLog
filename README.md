@@ -61,7 +61,7 @@ public class Example {
 
 Output:
 ```console
-23.03.2019 - 02:22:22 | INFO > Drainyyy is still writing the README
+INFO > Drainyyy is still writing the README
 23.03.2019 - 02:22:47 | NOTIF > Drainyyy is still writing the README
 ```
 
