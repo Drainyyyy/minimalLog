@@ -24,14 +24,11 @@ So you can also do something like
     23.03.2019 - 02:03:52 ~ WARN ~ Drainyyy is tired
     
 ##Installation
-1. Download the released jar
-
-2. - **IntelliJ**
+1. Download the released jar files (source and javadoc only if needed).
+3. - **IntelliJ**
         - Go to `File > Project Structure... > Libraries`
-        - Click the little green `+` and navigate to the jar
-        - Click it
-   - **Eclipse**
-        - Coming soon (I'm tired)...
+        - Click the little green `+` and navigate to the folder where all 3 jars (or only 1 or 2) are in.
+        - Add it.
         
 ## Examples
 ```java
