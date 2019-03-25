@@ -4,7 +4,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-package me.drainyyy.minimalLog;
+package com.github.drainyyyy.minimalLog;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,7 +21,7 @@ public class UncoloredLog {
 
     /** Create a log object that won't output text with color codes (without timestamp)
      *
-     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' -> | = separator)
+     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' : '|' = separator)
      *
      * @since 1.0
      */
@@ -31,7 +31,7 @@ public class UncoloredLog {
 
     /** Create a log object that won't output text with color codes (with timestamp)
      *
-     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' -> | = separator)
+     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' : '|' = separator)
      * @param timestamp The format the timestamp will be shown
      * @param timestampDiv A String that separates the timestamp and the logged text
      *

@@ -4,7 +4,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-package me.drainyyy.minimalLog;
+package com.github.drainyyyy.minimalLog;
 
 /**
  * @author Drainyyy

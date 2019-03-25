@@ -4,7 +4,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-package me.drainyyy.minimalLog;
+package com.github.drainyyyy.minimalLog;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,7 +32,7 @@ public class ColoredLog {
      * warning-color: magenta
      * error-color: red
      *
-     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' -> | = separator)
+     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' : '|' = separator)
      *
      * @since 1.0
      */
@@ -53,7 +53,7 @@ public class ColoredLog {
      * warning-color: magenta
      * error-color: red
      *
-     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' -> | = separator)
+     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' : '|' = separator)
      * @param timestamp The format the timestamp will be shown
      * @param timestampDiv A String that separates the timestamp and the logged text
      *
@@ -75,7 +75,7 @@ public class ColoredLog {
 
     /** An object of ColoredLog where the user chooses the colors from the {@link Colors} class (without timestamp)
      *
-     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' -> | = separator)
+     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text': '|' = separator)
      * @param information The color for infos
      * @param notification The color for notifications
      * @param warning The color for warnings
@@ -96,7 +96,7 @@ public class ColoredLog {
 
     /** An object of ColoredLog where the user chooses the colors from the {@link Colors} class (with timestamp)
      *
-     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' -> | = separator)
+     * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text': '|' = separator)
      * @param timestamp The format the timestamp will be shown
      * @param timestampDiv A String that separates the timestamp and the logged text
      * @param information The color for infos
