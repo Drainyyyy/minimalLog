@@ -23,7 +23,7 @@ So you can also do something like
 
     23.03.2019 - 02:03:52 ~ WARN ~ Drainyyy is tired
     
-##Installation
+## Installation
 1. Download the released jar files (source and javadoc only if needed).
 3. - **IntelliJ**
         - Go to `File > Project Structure... > Libraries`
