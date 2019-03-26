@@ -138,12 +138,12 @@ public class ColoredLog {
      */
     private String formatText(String type, String text, Colors color) {
         String formattedText = type + " " + this.typeDiv + " " + text;
-        if (this.formattedTimestamp != null) {
-            formattedText = this.formattedTimestamp + " " + this.timestampDiv + " ";
-        }
-
         String resetColor = "\u001b[0m";
-        return color.getColor() + formattedText + resetColor;
+        String coloredText = color.getColor() + formattedText + resetColor;
+        if (this.formattedTimestamp != null) {
+            formattedText = this.formattedTimestamp + " " + this.timestampDiv + " " + coloredText;
+        }
+        return formattedText;
     }
 
     /** Information log (type: 'INFO', default-color: blue)

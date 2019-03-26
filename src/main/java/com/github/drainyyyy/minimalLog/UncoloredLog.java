@@ -60,7 +60,7 @@ public class UncoloredLog {
     private String formatText(String type, String text) {
         String formattedText = type + " " + this.typeDiv + " " + text;
         if (this.formattedTimestamp != null) {
-            formattedText = this.formattedTimestamp + " " + this.timestampDiv + " ";
+            formattedText = this.formattedTimestamp + " " + this.timestampDiv + " " + formattedText;
         }
 
         return formattedText;
