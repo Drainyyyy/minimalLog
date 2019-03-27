@@ -142,6 +142,8 @@ public class ColoredLog {
         String coloredText = color.getColor() + formattedText + resetColor;
         if (this.formattedTimestamp != null) {
             formattedText = this.formattedTimestamp + " " + this.timestampDiv + " " + coloredText;
+        } else {
+            formattedText = coloredText;
         }
         return formattedText;
     }
