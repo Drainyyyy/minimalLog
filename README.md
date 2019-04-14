@@ -67,8 +67,21 @@ INFO > Drainyyy is still writing the README
 
 With colors it's nearly the same, except that if you want you can choose the colors for the different log types.
 
-Otherwise the colors will be default (info: blue, notif: green, warn: magenta, err: red)
+Otherwise the colors will be default (info: blue, notif: green, warn: magenta, err: red, exceptionHandlerText: red, exceptionHandlerKeywords: magenta)
 
 **Note:** On Windows the colors won't be shown in the default command prompt. 
 
 To view the colors you'll need another Console like Cmder.
+
+## ExceptionHandler
+minimalLog also offers a way to make exceptions more viewable.
+
+With the exceptionHandler method which only takes the Exception e as parameter your exception will be outputted like this:
+
+```
+EXCEPTION <typeDiv> <exception>
+StackTrace <typeDiv> <StackTraceElement>
+StackTrace <typeDiv> <StackTraceElement>
+StackTrace <typeDiv> <StackTraceElement>
+StackTrace <typeDiv> <StackTraceElement>
+```
