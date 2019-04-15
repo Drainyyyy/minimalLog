@@ -14,11 +14,14 @@ import java.util.Date;
  * https://github.com/Drainyyyy
  */
 public class ColoredLog {
+    private String resetColor = "\u001b[0m";
 
     private Colors information;
     private Colors notification;
     private Colors warning;
     private Colors error;
+    private Colors exceptionHandlerText;
+    private Colors exceptionHandlerKeywords;
 
     private String typeDiv;
     private String formattedTimestamp;
@@ -31,18 +34,22 @@ public class ColoredLog {
      * notification-color: green
      * warning-color: magenta
      * error-color: red
+     * exceptionHandlerText: red
+     * exceptionHandlerKeywords: magenta
      *
      * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' : '|' = separator)
      *
      * @since 1.0
      */
     public ColoredLog(String typeDiv) {
-        this.typeDiv = typeDiv;
+        this.typeDiv = " " + typeDiv + " ";
 
         this.information = Colors.blue;
         this.notification = Colors.green;
         this.warning = Colors.magenta;
         this.error = Colors.red;
+        this.exceptionHandlerText = Colors.red;
+        this.exceptionHandlerKeywords = Colors.magenta;
     }
 
     /** An object of ColoredLog with default settings (with timestamp)
@@ -52,6 +59,8 @@ public class ColoredLog {
      * notification-color: green
      * warning-color: magenta
      * error-color: red
+     * exceptionHandlerText: red
+     * exceptionHandlerKeywords: magenta
      *
      * @param typeDiv Separator for the type of the logged text and the text (e.g. 'INFO | text' : '|' = separator)
      * @param timestamp The format the timestamp will be shown
@@ -62,8 +71,8 @@ public class ColoredLog {
      * @since 1.0
      */
     public ColoredLog(String typeDiv, SimpleDateFormat timestamp, String timestampDiv) {
-        this.typeDiv = typeDiv;
-        this.timestampDiv = timestampDiv;
+        this.typeDiv = " " + typeDiv + " ";
+        this.timestampDiv = " " + timestampDiv + " ";
 
         this.formattedTimestamp = timestamp.format(new Date());
 
@@ -71,6 +80,8 @@ public class ColoredLog {
         this.notification = Colors.green;
         this.warning = Colors.magenta;
         this.error = Colors.red;
+        this.exceptionHandlerText = Colors.red;
+        this.exceptionHandlerKeywords = Colors.magenta;
     }
 
     /** An object of ColoredLog where the user chooses the colors from the {@link Colors} class (without timestamp)
@@ -80,18 +91,23 @@ public class ColoredLog {
      * @param notification The color for notifications
      * @param warning The color for warnings
      * @param error The color for errors
+     * @param exceptionHandlerText The color for the text of the exception handler (e.g. stacktrace, exception)
+     * @param exceptionHandlerKeywords The color for the keywords (e.g. 'Stacktrace:' stacktrace)
      *
      * @see Colors
      *
      * @since 1.0
      */
-    public ColoredLog(String typeDiv, Colors information, Colors notification, Colors warning, Colors error) {
-        this.typeDiv = typeDiv;
+    public ColoredLog(String typeDiv, Colors information, Colors notification, Colors warning, Colors error,
+                      Colors exceptionHandlerText, Colors exceptionHandlerKeywords) {
+        this.typeDiv = " " + typeDiv + " ";
 
         this.information = information;
         this.notification = notification;
         this.warning = warning;
         this.error = error;
+        this.exceptionHandlerText = exceptionHandlerText;
+        this.exceptionHandlerKeywords = exceptionHandlerKeywords;
     }
 
     /** An object of ColoredLog where the user chooses the colors from the {@link Colors} class (with timestamp)
@@ -103,14 +119,17 @@ public class ColoredLog {
      * @param notification The color for notifications
      * @param warning The color for warnings
      * @param error The color for errors
+     * @param exceptionHandlerText The color for the text of the exception handler (e.g. stacktrace, exception)
+     * @param exceptionHandlerKeywords The color for the keywords (e.g. 'Stacktrace:' stacktrace)
      *
      * @see Colors
      *
      * @since 1.0
      */
-    public ColoredLog(String typeDiv, SimpleDateFormat timestamp, String timestampDiv, Colors information, Colors notification, Colors warning, Colors error) {
-        this.typeDiv = typeDiv;
-        this.timestampDiv = timestampDiv;
+    public ColoredLog(String typeDiv, SimpleDateFormat timestamp, String timestampDiv, Colors information, Colors notification, Colors warning,
+                      Colors error, Colors exceptionHandlerText, Colors exceptionHandlerKeywords) {
+        this.typeDiv = " " + typeDiv + " ";
+        this.timestampDiv = " " + timestampDiv + " ";
 
         this.formattedTimestamp = timestamp.format(new Date());
 
@@ -118,6 +137,8 @@ public class ColoredLog {
         this.notification = notification;
         this.warning = warning;
         this.error = error;
+        this.exceptionHandlerText = exceptionHandlerText;
+        this.exceptionHandlerKeywords = exceptionHandlerKeywords;
     }
 
     /** Formats the text so that every logged text looks equal
@@ -137,14 +158,9 @@ public class ColoredLog {
      * @since 1.0
      */
     private String formatText(String type, String text, Colors color) {
-        String formattedText = type + " " + this.typeDiv + " " + text;
-        String resetColor = "\u001b[0m";
+        String formattedText = type + this.typeDiv + text;
         String coloredText = color.getColor() + formattedText + resetColor;
-        if (this.formattedTimestamp != null) {
-            formattedText = this.formattedTimestamp + " " + this.timestampDiv + " " + coloredText;
-        } else {
-            formattedText = coloredText;
-        }
+        formattedText = (formattedTimestamp != null) ? this.formattedTimestamp + this.timestampDiv + coloredText : coloredText;
         return formattedText;
     }
 
@@ -200,4 +216,49 @@ public class ColoredLog {
         System.out.println(err);
     }
 
+    /** Prints the exception and the respective stacktrace.
+     * The keywords ('EXCEPTION' and 'StackTrace') will get printed in {@link #exceptionHandlerKeywords}.
+     * The stacktrace and the exception message itself will get pinted in {@link #exceptionHandlerText}.
+     *
+     * @param e The exception that got thrown
+     *
+     * @see Colors
+     *
+     * @since 1.1.0
+     */
+    public void exceptionHandler(Exception e) {
+        String textColor = this.exceptionHandlerText.getColor();
+        String keywordColor = this.exceptionHandlerKeywords.getColor();
+
+        String exception = e.getMessage();
+
+        StringBuilder formattedStackTrace = new StringBuilder();
+        for (StackTraceElement stackTraceElement : e.getStackTrace()) {
+            formattedStackTrace.append(keywordColor)
+                .append("StackTrace")
+                .append(resetColor)
+                .append(typeDiv)
+                .append(textColor)
+                .append(stackTraceElement)
+                .append(resetColor)
+                .append("\n");
+        }
+
+        StringBuilder formattedException = new StringBuilder();
+        formattedException.append(keywordColor);
+        if (this.formattedTimestamp != null) {
+            formattedException.append(this.formattedTimestamp)
+                            .append(this.timestampDiv);
+        }
+        formattedException.append("EXCEPTION")
+                        .append(resetColor)
+                        .append(this.typeDiv)
+                        .append(textColor)
+                        .append(exception)
+                        .append(resetColor);
+
+        System.out.println(formattedException);
+        System.out.println(formattedStackTrace);
+
+    }
 }

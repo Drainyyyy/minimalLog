@@ -26,7 +26,7 @@ public class UncoloredLog {
      * @since 1.0
      */
     public UncoloredLog(String typeDiv) {
-        this.typeDiv = typeDiv;
+        this.typeDiv = " " + typeDiv + " ";
     }
 
     /** Create a log object that won't output text with color codes (with timestamp)
@@ -40,8 +40,8 @@ public class UncoloredLog {
      * @since 1.0
      */
     public UncoloredLog(String typeDiv, SimpleDateFormat timestamp, String timestampDiv) {
-        this.typeDiv = typeDiv;
-        this.timestampDiv = timestampDiv;
+        this.typeDiv = " " + typeDiv + " ";
+        this.timestampDiv = " " + timestampDiv + " ";
 
         this.formattedTimestamp = timestamp.format(new Date());
     }
@@ -58,9 +58,9 @@ public class UncoloredLog {
      * @since 1.0
      */
     private String formatText(String type, String text) {
-        String formattedText = type + " " + this.typeDiv + " " + text;
+        String formattedText = type + this.typeDiv + text;
         if (this.formattedTimestamp != null) {
-            formattedText = this.formattedTimestamp + " " + this.timestampDiv + " " + formattedText;
+            formattedText = this.formattedTimestamp + this.timestampDiv+ formattedText;
         }
 
         return formattedText;
@@ -110,4 +110,36 @@ public class UncoloredLog {
         System.out.println(err);
     }
 
+    /** Prints the exception and the respective stacktrace.
+     *
+     * @param e The exception that got thrown
+     *
+     * @see Colors
+     *
+     * @since 1.1.0
+     */
+    public void exceptionHandler(Exception e) {
+        String exception = e.getMessage();
+
+        StringBuilder formattedStackTrace = new StringBuilder();
+        for (StackTraceElement stackTraceElement : e.getStackTrace()) {
+            formattedStackTrace
+                    .append("StackTrace")
+                    .append(typeDiv)
+                    .append(stackTraceElement)
+                    .append("\n");
+        }
+
+        StringBuilder formattedException = new StringBuilder();
+        if (this.formattedTimestamp != null) {
+            formattedException.append(this.formattedTimestamp)
+                            .append(this.timestampDiv);
+        }
+        formattedException.append("EXCEPTION")
+                        .append(this.typeDiv)
+                        .append(exception);
+
+        System.out.println(formattedException);
+        System.out.println(formattedStackTrace);
+    }
 }
