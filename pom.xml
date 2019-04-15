@@ -12,7 +12,7 @@
 
     <groupId>com.github.drainyyyy</groupId>
     <artifactId>minimalLog</artifactId>
-    <version>1.0.01</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>minimalLog</name>
@@ -36,9 +36,14 @@
         </license>
     </licenses>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
