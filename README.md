@@ -44,10 +44,9 @@ If you want faster support/easier chatting you can join [**my discord server**](
 ## Features
 With minimalLog you can declare one or more specific and configurable log types.
 
-Basically there are 3 different main types that can be configured by themselves too:
+Basically there are 2 different main types that can be configured by themselves too:
 - UncoloredLog
 - ColoredLog
-- ExceptionHandler
 
 ### UncoloredLog and ColoredLog
 
@@ -55,9 +54,7 @@ Basically there are 3 different main types that can be configured by themselves 
 These two are pretty much the same except that (how the name already says) UncoloredLog
 does not support colors.
 
-**Note that colors are not shown in the default windows command prompt.**
-
-**For showing colors on windows you will need something like ConEmu.**
+*Note: colors are not shown in the default windows command prompt. For showing colors on windows you will need something like ConEmu.*
 
 #### Notification-types
 When logging something into the console you can choose between 5 options:
@@ -77,8 +74,8 @@ The exceptionHandler just takes the Exception e as input and prints out the erro
 #### Configurations
 - Toggle timestamp
 - Format timestamp how you like with SimpleDateFormat
-- Change divider between text-type and text (type divider)
-- Change divider between timestamp and text-type (timestamp divider)
+- Change divider between text-type and text (typeDiv)
+- Change divider between timestamp and text-type (timestampDiv)
 - ColoredLog specials
     - Change colors for different text-types
     
@@ -148,6 +145,7 @@ public class Main {
         cLog2.error("Lorem ipsum dolor sit amet, consectetuer adipiscing elit");
         cLog3.information("Lorem ipsum dolor sit amet, consectetuer adipiscing elit");
         cLog4.notification("Lorem ipsum dolor sit amet, consectetuer adipiscing elit");
+        
         try {
             throw new Exception("200");
         } catch (Exception e) {
@@ -261,4 +259,4 @@ The exceptionHandler method is a bit special.
 
 It only takes the Exception as input and prints the error message and every stacktrace-element.
 
-[**See examples 7 and 8**]()
+[**See examples 7 and 8**](https://github.com/Drainyyyy/minimalLog/blob/master/README.md#output-coloredlog)
