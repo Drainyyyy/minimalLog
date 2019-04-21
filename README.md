@@ -3,9 +3,9 @@ A minimalistic log library that makes console logs more viewable and easier to h
 
 [**Changelog**](CHANGELOG.md)
 
-[**Download**](https://github.com/Drainyyyy/minimalLog/tree/master/builds)
+[**Download**](builds)
 
-[**Support**](https://github.com/Drainyyyy/minimalLog/tree/master/README.md#support)
+[**Support**](README.md#support)
 
 [**Contributing**](CONTRIBUTING.md)
 
@@ -13,7 +13,7 @@ A minimalistic log library that makes console logs more viewable and easier to h
 ### General
 
 ---
-- [Download](https://github.com/Drainyyyy/minimalLog/tree/master/builds) the latest version of minimalLog
+- [Download](builds) the latest version of minimalLog
 
 **Following steps are just to make things easier**
 - If you have more than one file downloaded (e.g. you downloaded the source/javadoc too)
@@ -176,7 +176,7 @@ INFO > Lorem ipsum dolor sit amet, consectetuer adipiscing elit
 7. ExceptionHandler     (with timestamp, default colors)        [cLogErr1]
 8. ExceptionHandler     (without timestamp, custom colors)      [cLogErr2]
 
-A list of all colors and what the default colors are is in the [ColoredLog](https://github.com/Drainyyyy/minimalLog/blob/master/README.md#coloredlog) description.
+A list of all colors and what the default colors are is in the [ColoredLog](README.md#coloredlog) description.
 
 --- 3. ---
 
@@ -259,4 +259,4 @@ The exceptionHandler method is a bit special.
 
 It only takes the Exception as input and prints the error message and every stacktrace-element.
 
-[**See examples 7 and 8**](https://github.com/Drainyyyy/minimalLog/blob/master/README.md#output-coloredlog)
+[**See examples 7 and 8**](README.md#output-coloredlog)
