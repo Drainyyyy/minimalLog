@@ -4,10 +4,7 @@ If you think there is a feature that could be added or made better, feel free to
 
 But there are some rules to keep in mind.
 
-## Rules
-### Issues
-
----
+## Issues
 If you got any issues with minimalLog (e.g. it's not working/there is a bug) you can post this issue on the [issues page](https://github.com/Drainyyyy/minimalLog/issues).
 But please describe your problem properly and (if given) give enough steps to reproduce so I can understand where the problem is.
 Also helpful is to add what is supposed to happen, because it could be that I don't even understand what the problem is.
@@ -22,9 +19,7 @@ The following checklist is also a schema you can use for issue:
  - [ ] What does actually happen (abridged version)
  - [ ] If necessary your device and os
 
-### Feature Requests
-
----
+## Feature Requests
 Sometimes you wish additional features that could be helpful. Just send them in here, but keep in mind this log library is made to be simple.
 minimalLog is not supposed to have thousands of features which are made for special purposes.
 It's made for having some features that can be useful for every purpose. 
@@ -39,14 +34,14 @@ to complete before sending your request:
  - [ ] Is your feature related to a problem? (if yes describe it clearly and detailed or create an [issue](CONTRIBUTING.md#issues))
  - [ ] Clear and detailed description of your idea
  
-### Development
-
----
+## Development
 If you want to contribute to this project by adding new features or fixing bugs by yourself, you are very welcome.
 That makes things a lot easier for me because I got a long list of things I could work on.
 But also here are some things you should keep in mind before submitting the code you have written.
 
-#### Documentation
+### Documentation
+
+---
 Every function in this code is documented and this should stay that way.
 My documentation is built the same every time.
 
@@ -95,12 +90,16 @@ public class Documentation {
 The first number is changed when big changes come up.
 The second number is for smaller changes and additions and the third is for bug fixes.
 
-#### Code style
+### Code style
+
+---
 One of the goals of my open-source projects is human readability. 
 When writing code for this project try to stick to the rules of java naming conventions and don't make a mess in it.
 Also test your code before you submit it, because I won't accept it when it's not working.
 
-#### Rejecting Pull Requests
+### Rejecting Pull Requests
+
+---
 When your pull request got rejected or you just want to make sure it won't read through this.
 
 When a pull request is rejected this could have many different reasons. The main reasons are the following:
