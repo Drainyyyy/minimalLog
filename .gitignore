@@ -3,6 +3,7 @@
 out/
 target/
 minimalLog.iml
+builds/
 
 # Compiled class file
 *.class

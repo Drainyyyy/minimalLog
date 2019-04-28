@@ -3,7 +3,7 @@ A minimalistic log library that makes console logs more viewable and easier to h
 
 [**Changelog**](CHANGELOG.md)
 
-[**Download**](builds)
+[**Download**](https://github.com/Drainyyyy/minimalLog/releases)
 
 [**Support**](README.md#support)
 
@@ -13,7 +13,7 @@ A minimalistic log library that makes console logs more viewable and easier to h
 ### General
 
 ---
-- [Download](builds) the latest version of minimalLog
+- [Download](https://github.com/Drainyyyy/minimalLog/releases) the latest version of minimalLog
 
 **Following steps are just to make things easier**
 - If you have more than one file downloaded (e.g. you downloaded the source/javadoc too)
