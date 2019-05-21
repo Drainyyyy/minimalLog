@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/res/img/logo.png" width="200" height="200">
+  <img src="docs/res/img/logo.png" width="300" height="300">
   <h1>minimalLog</h1>
   A minimalistic log library that makes console logs more viewable and easier to handle
   
