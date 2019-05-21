@@ -1,13 +1,13 @@
-# minimalLog
-A minimalistic log library that makes console logs more viewable and easier to handle
-
-[**Changelog**](CHANGELOG.md)
-
-[**Download**](https://github.com/Drainyyyy/minimalLog/releases)
-
-[**Support**](README.md#support)
-
-[**Contributing**](CONTRIBUTING.md)
+<div align="center">
+  <img src="docs/res/img/logo.png" width="200" height="200">
+  <h1>minimalLog</h1>
+  A minimalistic log library that makes console logs more viewable and easier to handle
+  
+  <a href="CHANGELOG.md"><strong>Changelog</strong></a>
+  <a href="https://github.com/Drainyyyy/minimalLog/releases"><strong>Download</strong></a>
+  <a href="README.md#support"><strong>Support</strong></a>
+  <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
+</div>
 
 ## Installation
 ### General
