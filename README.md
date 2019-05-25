@@ -39,7 +39,7 @@
 - Click 'Add External JARs'
 - Navigate to the directory minimalLog is in
 - Add minimalLog
-- You now should be able to use minimalLog
+- You now should be able to use minimalLog 
 
 ### Other IDEs
 
