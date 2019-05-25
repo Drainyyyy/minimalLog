@@ -18,6 +18,7 @@
 **Following steps are just to make things easier**
 - If you have more than one file downloaded (e.g. you downloaded the source/javadoc too)
     - Move all files to one folder where no other libraries are in (to make things easier)
+
 ### IntelliJ
 
 ---
@@ -28,6 +29,17 @@
 - Navigate to the directory where the jar(s) are in
 - Add the folder where the jar(s)
 - You now should have added minimalLog to your project
+
+### Eclipse
+
+---
+- Right click the current project
+- Click 'Properties'
+- Navigate to 'Java Build Path'
+- Click 'Add External JARs'
+- Navigate to the directory minimalLog is in
+- Add minimalLog
+- You now should be able to use minimalLog
 
 ### Other IDEs
 
